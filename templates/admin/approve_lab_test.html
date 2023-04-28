@@ -1,0 +1,88 @@
+{% extends 'admin/base_home.html' %}
+{% load static %}
+{% block content %}
+<script>
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+</script>
+<style>
+
+
+
+.button-88 {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-88:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+}
+
+.button-88:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+</style>
+
+<div>
+    <div class="container" style="margin-top:-170px"><br><br>
+        <center>
+            <h1 style="color:white;">Approve lab test </h1></center>
+
+
+        <table class="table">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+
+
+
+                  <th>UserName</th>
+                  <th>Password</th>
+                  <th>Email</th>
+                  <th>PhoneNo</th>
+                  <th>Date of birth</th>
+                  <th>Address</th>
+                  <th>Status</th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody style="text-align:center;">
+            {% for i in values %}
+            <tr style="background-color:#00204a;color:white;">
+                <td style="text-align:center;">{{i.username}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.phoneno}}</td>
+                <td>{{i.Dateofbirth}}</td>
+                <td>{{i.Address}}</td>
+                <td><a href ="/approve_lab_test_true/{{i.id}}/"><input type ="button" class="button-88" value="approve" /></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>DOCTOR - Responsive HTML &amp; Bootstrap Template</title>
+	<link rel="stylesheet" href="{% static 'index/css/font-awesome.min.css'%}">
+	<link rel="stylesheet" href="{% static 'index/css/bootstrap.min.css'%}">
+	<link rel="stylesheet" href="{% static 'index/css/style.css'%}">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
+	<script src="{% static 'index/js/modernizr.js'%}"></script>
+	<!--[if lt IE 9]>
+      <script src="{% static 'index/js/html5shiv.js'%}"></script>
+      <script src="{% static 'index/js/respond.min.js'%}"></script>
+    <![endif]-->
+<script>
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+</script>
+</head>
+<body>
+
+	<!-- ====================================================
+	header section -->
+	<header class="top-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-5 header-logo">
+					<br>
+					<a href="#"><img src="{% static 'index/img/logo.png'%}" alt="" class="img-responsive logo"></a>
+				</div>
+
+				<div class="col-md-7">
+					<nav class="navbar navbar-default">
+					  <div class="container-fluid nav-bar">
+					    <!-- Brand and toggle get grouped for better mobile display -->
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+					      </button>
+					    </div>
+
+					    <!-- Collect the nav links, forms, and other content for toggling -->
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+					        <li><a class="menu active" href="/patient_login/" style="font-size:18px">Patient</a></li>
+
+					        <li><a class="menu" href="/lab_login/" style="font-size:18px">Laboratory</a></li>
+					        <li><a class="menu" href="/doctor_login" style="font-size:18px">Doctor</a></li>
+					        <li><a class="menu" href="/estimator_login/" style="font-size:18px">Estimator</a></li>
+<!--					        <li><a class="menu" href="//" style="font-size:18px">Medical</a></li>-->
+							<li><a class="menu" href="/admin_login/" style="font-size:18px">Admin</a></li>
+<!--							<li><a class="menu" href="" style="font-size:18px">logout</a></li>-->
+
+						  </ul>
+					    </div><!-- /navbar-collapse -->
+					  </div><!-- / .container-fluid -->
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header> <!-- end of header area -->
+
+	<section class="slider" id="home">
+<!--		<div class="container-fluid">-->
+			<div class="row">
+			    <div id="carouselHacked" class="carousel slide carousel-fade" data-ride="carousel">
+					<div class="header-backup"></div>
+			        <!-- Wrapper for slides -->
+			        <div class="carousel-inner" role="listbox">
+			            <div class="item active">
+<!--			            	<img src="{% static 'index/img/slide-one.jpg'%}" alt="">-->
+<!--							  	<img src="{% static 'index/img/slide-two.jpg'%}" alt="">-->
+<!--							<img src="{% static 'index/img/slide-four.jpg'%}" alt="">-->
+							{% block content %}
+							<img src="{% static 'index/img/slide-three.jpg'%}" alt="">
+							{% endblock %}
+
+<!--			                <div class="carousel-caption">-->
+<!--		               			<h1>providing</h1>-->
+<!--		               			<p>highquality service for men &amp; women</p>-->
+<!--		               			<button>learn more</button>-->
+			                </div>
+			            </div>
+<!--	we put that div 3				-->
+					</div>
+				</div>
+
+
+	<footer class="footer clearfix">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 footer-para">
+					<p>&copy;Mostafizur All right reserved</p>
+				</div>
+				<div class="col-xs-6 text-right">
+					<a href=""><i class="fa fa-facebook"></i></a>
+					<a href=""><i class="fa fa-twitter"></i></a>
+					<a href=""><i class="fa fa-skype"></i></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- script tags
+	============================================================= -->
+<!--	<script src="{% static 'index/js/jquery-2.1.1.js'%}"></script>-->
+<!--	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>-->
+<!--	<script src="{% static 'index/js/gmaps.js'%}"></script>-->
+<!--	<script src="{% static 'index/js/smoothscroll.js'%}"></script>-->
+<!--	<script src="{% static 'index/js/bootstrap.min.js'%}"></script>-->
+<!--	<script src="{% static 'index/js/custom.js'%}"></script>-->
+</body>
+</html>

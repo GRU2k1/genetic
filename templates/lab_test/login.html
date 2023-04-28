@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<head>
+    <meta charset="utf-8">
+    <title>Form-v5 by Colorlib</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="{%static 'new/css/roboto-font.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'new/fonts/font-awesome-5/css/fontawesome-all.min.css'%}">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{%static 'new/css/style.css'%}"/>
+      <script>
+
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+   </script>
+    <style>
+
+
+
+/* CSS */
+.button-36 {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+    </style>
+
+</head>
+
+<body class="form-v5">
+<div class="page-content"  style="background-image: url('{% static 'login/images/doc2.jpg'%}'); background-size:cover;">
+    <div class="form-v5-content" style="width:500px">
+        <form class="form-detail" action="/lab_login/" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" class="input-text"
+                       autocomplete="off">
+                <i class="fas fa-envelope"></i>
+<!--                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"-->
+            </div>
+            <div class="form-row">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="input-text"
+                      >
+<!--                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"-->
+                <i class="fas fa-lock"></i>
+
+            </div>
+            <div>
+                <input type="submit" name="login" class="login" value="login"><br><br>
+
+
+            </div>
+             <div>
+<!--                <input type="submit" name="Signup" class="Signup" value="Create an account"><br><br>-->
+<!--                  <a href="/signup"/><a/> <input type ="Submit">-->
+              <button class="button-36" role="button">
+                 <a href ="/lab_register/">create an account</a>
+                     </button><br><br>
+               <button class="button-36" role="button">
+                    <a href ="/">Home</a>
+                 </button>
+<!--                  <input type="submit" name="signup" class="login" value="signup">-->
+<!--                <a href ="/signup/"></a>-->
+
+            </div>
+        </form>
+<!--        <a href="/signup">Create an Account</a>-->
+
+    </div>
+</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

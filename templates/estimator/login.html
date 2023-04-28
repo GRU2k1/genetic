@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<head>
+    <meta charset="utf-8">
+    <title>Form-v5 by Colorlib</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="{%static 'new/css/roboto-font.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'new/fonts/font-awesome-5/css/fontawesome-all.min.css'%}">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="{%static 'new/css/style.css'%}"/>
+      <script>
+
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+   </script>
+    <style>
+
+
+
+
+.button-79 {
+  backface-visibility: hidden;
+  background: #332cf2;
+  border: 0;
+  border-radius: .375rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,Helvetica,sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: 1rem 1.25rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-79:disabled {
+  color: #787878;
+  cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+  outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+  border-width: .125rem;
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+    </style>
+</head>
+
+<body class="form-v5">
+<div class="page-content"  style="background-image: url('{% static 'login/images/doc3.jpg'%}'); background-size:cover;">
+    <div class="form-v5-content" style="width:500px">
+        <form class="form-detail" action="/estimator_login/" method="post">
+            {% csrf_token %}
+            <h2>Login</h2>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" class="input-text"
+                       autocomplete="off">
+                <i class="fas fa-envelope"></i>
+<!--                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"-->
+            </div>
+            <div class="form-row">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="input-text"
+                      >
+<!--                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"-->
+                <i class="fas fa-lock"></i>
+
+            </div>
+            <div>
+                <input type="submit" name="login" class="login" value="login"><br><br>
+
+
+            </div>
+             <div>
+<!--                <input type="submit" name="Signup" class="Signup" value="Create an account"><br><br>-->
+<!--                  <a href="/signup"/><a/> <input type ="Submit">-->
+                <button class="button-79" role="button">
+                 <a href ="/estimator_register/">create an account</a>
+                     </button><br><br>
+                <button class="button-79" role="button">
+                    <a href ="/">Home</a>
+                 </button>
+<!--                  <input type="submit" name="signup" class="login" value="signup">-->
+<!--                <a href ="/signup/"></a>-->
+
+            </div>
+        </form>
+<!--        <a href="/signup">Create an Account</a>-->
+
+    </div>
+</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

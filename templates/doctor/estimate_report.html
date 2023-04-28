@@ -1,0 +1,107 @@
+{% extends 'doctor/base_home.html'%}
+{% load static %}
+{% block content %}
+
+<style>
+    table{
+        overflow-x: scroll
+    }
+
+
+.button-62 {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+</style>
+<script>
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+</script>
+<!--style=" background-image: url({% static 'login/images/tab4.jpg'%}); height:800px; background-size:cover;"-->
+<div  >
+    <h1 class ="center">Patient basic Details</h1>
+
+
+       <table class="table">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+                <th>Name</th>
+                <th>Genes in mothers side</th>
+                <th>Inherited from father</th>
+                <th>Maternal gene</th>
+                <th>Paternal gene</th>
+                <th>Gender</th>
+                <th>Birth defects</th>
+                <th>WhiteBlood cell count</th>
+                <th>Blood test result</th>
+                <th>Email</th>
+                <th>Contact No</th>
+                <th>status</th>
+                <th>send patient</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in lab_data %}
+            <tr style="background-color:#00204a;color:white;text-align: center;">
+
+                <td>{{i.name}}</td>
+                <td>{{i.Genes_in_mothers_side}}</td>
+                <td>{{i.Inherited_from_father}}</td>
+                <td>{{i.Maternal_gene}}</td>
+                <td>{{i.Paternal_gene}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.Birth_defects}}</td>
+                <td>{{i.WhiteBlood_cell_count}}</td>
+                <td>{{i.Blood_test_result}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.contact_no}}</td>
+                <td>{{i.output}}</td>
+
+
+
+
+
+                <td><a href="/sendp/{{i.id}}/"><button class="btn btn-info">SEND patient</button></a></td>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</div>
+{% endblock %}
+
+
+
+
+
+

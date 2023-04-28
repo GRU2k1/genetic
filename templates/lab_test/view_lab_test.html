@@ -1,0 +1,64 @@
+{% extends 'lab_test/base_home.html' %}
+{% load static %}}
+{% block content %}
+
+<div>
+    <div class="container" style="margin-top:-150px"><br><br>
+        <center>
+            <h1 style="color:white;"> Patient lab test report</h1></center>
+        <br><br>
+
+
+        <table class="table">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+                <th>Name</th>
+                <th>Genes in mothers side</th>
+                <th>Inherited from father</th>
+                <th>Maternal gene</th>
+                <th>Paternal gene</th>
+                <th>Gender</th>
+                <th>Birth defects</th>
+                <th>WhiteBlood cell count</th>
+                <th>Blood test result</th>
+                <th>Email</th>
+                <th>Contact No</th>
+                <th>status</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for i in data %}
+            <tr style="background-color:#00204a;color:white;text-align: center;">
+
+                <td>{{i.name}}</td>
+                <td>{{i.Genes_in_mothers_side}}</td>
+                <td>{{i.Inherited_from_father}}</td>
+                <td>{{i.Maternal_gene}}</td>
+                <td>{{i.Paternal_gene}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.Birth_defects}}</td>
+                <td>{{i.WhiteBlood_cell_count}}</td>
+                <td>{{i.Blood_test_result}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.contact_no}}</td>
+
+
+
+
+
+                <td><a href="/send_to_doctor_labtest/{{i.id}}/"><button class="btn btn-info">SEND</button></a></td>
+
+
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}

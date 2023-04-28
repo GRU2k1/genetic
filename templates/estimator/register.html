@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v5 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{%static 'new/css/roboto-font.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'new/fonts/font-awesome-5/css/fontawesome-all.min.css'%}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{%static 'new/css/style.css'%}"/>
+	<style>
+
+<button class="button-79" role="button">Button 79</button>
+
+
+.button-79 {
+  backface-visibility: hidden;
+  background: #332cf2;
+  border: 0;
+  border-radius: .375rem;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,Helvetica,sans-serif;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -.01em;
+  line-height: 1.3;
+  padding: 1rem 1.25rem;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transform: translateZ(0) scale(1);
+  transition: transform .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-79:disabled {
+  color: #787878;
+  cursor: auto;
+}
+
+.button-79:not(:disabled):hover {
+  transform: scale(1.05);
+}
+
+.button-79:not(:disabled):hover:active {
+  transform: scale(1.05) translateY(.125rem);
+}
+
+.button-79:focus {
+  outline: 0 solid transparent;
+}
+
+.button-79:focus:before {
+  border-width: .125rem;
+  content: "";
+  left: calc(-1*.375rem);
+  pointer-events: none;
+  position: absolute;
+  top: calc(-1*.375rem);
+  transition: border-radius;
+  user-select: none;
+}
+
+.button-79:focus:not(:focus-visible) {
+  outline: 0 solid transparent;
+}
+
+.button-79:not(:disabled):active {
+  transform: translateY(.125rem);
+}
+	</style>
+</head>
+<body class="form-v5" >
+   <script>
+
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+   </script>
+
+	<div class="page-content" style="background-image: url('{% static 'login/images/doc2.jpg'%}'); background-size:cover;" >
+		<div class="form-v5-content" style="width:500px">
+			<form class="form-detail" action="/estimator_register/" method="post">
+				{% csrf_token %}
+				<h2>Register Form</h2>
+				<div class="form-row">
+					<label for="username">UserName</label>
+					<input type="text" name="username" id="username" class="input-text"  autocomplete="off">
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="form-row">
+					<label for="email">Email</label>
+					<input type="text" name="email" id="email" class="input-text"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  autocomplete="off" >
+					<i class="fas fa-envelope"></i>
+				</div>
+				<div class="form-row">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="input-text"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  >
+					<i class="fas fa-lock"></i>
+				</div>
+				<div class="form-row">
+					<label for="phoneno">Phoneno</label>
+					<input type="text" name="phoneno" id="phoneno" class="input-text" pattern="[6789][0-9]{9,}"  autocomplete="off" maxlength="10"/>
+
+				</div>
+				<div class="form-row">
+					<label for="Dateofbirth">Dateofbirth</label>
+					<input type="text" name="Dateofbirth" id="Dateofbirth" class="input-text"   autocomplete="off" />
+
+				</div>
+				<div class="form-row">
+					<label for="Address">Address</label>
+					<input type="text" name="Address" id="Address" class="input-text"  autocomplete="off">
+
+				</div>
+				<div>
+
+<button class="button-79" role="button">
+					<input type="submit" name="register" class="register" value="signup">
+	</button>
+					<br><br>
+					<button class="button-79" role="button">
+					<a href ="/estimator_login/">
+					</a> Login</button>
+
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

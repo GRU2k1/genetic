@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v5 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{%static 'new/css/roboto-font.css'%}">
+	<link rel="stylesheet" type="text/css" href="{%static 'new/fonts/font-awesome-5/css/fontawesome-all.min.css'%}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{%static 'new/css/style.css'%}"/>
+	<style>
+
+/* CSS */
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+.button-66 {
+  background-color: #0a6bff;
+  border-radius: 4px;
+  border: 0;
+  box-shadow: rgba(1,60,136,.5) 0 -1px 3px 0 inset,rgba(0,44,97,.1) 0 3px 6px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inherit;
+  font-family: "Space Grotesk",-apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+  min-height: 56px;
+  min-width: 120px;
+  padding: 16px 20px;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  transition: all .2s cubic-bezier(.22, .61, .36, 1);
+}
+
+.button-66:hover {
+  background-color: #065dd8;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button-66 {
+    padding: 16px 44px;
+    min-width: 150px;
+  }
+}
+	</style>
+</head>
+<body class="form-v5" >
+   <script>
+
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+   </script>
+
+	<div class="page-content" style="background-image: url('{% static 'login/images/doc3.jpg'%}'); background-size:cover;" >
+		<div class="form-v5-content" style="width:500px">
+			<form class="form-detail" action="/doctor_register/" method="post">
+				{% csrf_token %}
+				<h2>Register Form</h2>
+				<div class="form-row">
+					<label for="username">UserName</label>
+					<input type="text" name="username" id="username" class="input-text"  autocomplete="off">
+					<i class="fas fa-user"></i>
+				</div>
+				<div class="form-row">
+					<label for="email">Email</label>
+					<input type="text" name="email" id="email" class="input-text"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  autocomplete="off" >
+					<i class="fas fa-envelope"></i>
+				</div>
+				<div class="form-row">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="input-text"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  >
+					<i class="fas fa-lock"></i>
+				</div>
+				<div class="form-row">
+					<label for="phoneno">Phoneno</label>
+					<input type="text" name="phoneno" id="phoneno" class="input-text" pattern="[6789][0-9]{9,}"  autocomplete="off" maxlength="10"/>
+
+				</div>
+				<div class="form-row">
+					<label for="Dateofbirth">Dateofbirth</label>
+					<input type="text" name="Dateofbirth" id="Dateofbirth" class="input-text"   autocomplete="off" />
+
+				</div>
+				<div class="form-row">
+					<label for="Address">Address</label>
+					<input type="text" name="Address" id="Address" class="input-text"  autocomplete="off">
+
+				</div>
+
+
+
+<div>
+					<input type="submit" name="register" class="register" value="signup">
+					<a href ="/patient_login/">
+
+				</div>
+				<button class="button-34" role="button">  <a href ="/">Home</a></button>
+
+
+
+
+
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+<!-- HTML !-->
+<button class="button-3" role="button">Button 3</button>

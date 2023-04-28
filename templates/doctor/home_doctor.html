@@ -1,0 +1,15 @@
+{% extends 'doctor/base_home.html' %}
+{% block content %}
+<script>
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to home Page</h1>
+</body>
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'admin/base_home.html' %}
+{% load static %}
+{% block content %}
+<script>
+{% for m in messages %}
+      alert('{{ m }}');
+{% endfor %}
+</script>
+<style>
+
+
+
+.button-87 {
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+</style>
+
+<div >
+    <div class="container" style="margin-top:-150px"><br><br>
+        <center>
+            <h1 >Approve Estimator </h1></center>
+
+
+        <table class="table">
+            <thead>
+
+
+            <tr style="font-family:verdana; background-color:white;text-align: center;">
+
+
+
+                  <th>UserName</th>
+                  <th>Password</th>
+                  <th>Email</th>
+                  <th>PhoneNo</th>
+                  <th>Date of birth</th>
+                  <th>Address</th>
+                  <th>Status</th>
+
+
+
+
+            </tr>
+            </thead>
+            <tbody style="text-align:center;">
+            {% for i in values %}
+            <tr style="background-color:#00204a;color:white;">
+                <td style="text-align:center;">{{i.username}}</td>
+                <td>{{i.email}}</td>
+                <td>{{i.password}}</td>
+                <td>{{i.phoneno}}</td>
+                <td>{{i.Dateofbirth}}</td>
+                <td>{{i.Address}}</td>
+                <td><a href ="/approve_estimator_true/{{i.id}}/"><input type ="button" class="button-87" value="approve" /></a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+
+{% endblock %}
